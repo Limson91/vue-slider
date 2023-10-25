@@ -74,11 +74,23 @@ createApp({
             if(this.activeSlide < 0) {
                 this.activeSlide = this.slides.length - 1;
             }
+        },
+
+        changeImage(index) {
+            this.activeSlide = index;
+        },
+
+        autoScroll() {
+            setInterval(() => {
+                this.nextSlides();
+                console.log('test scroll');
+            }, 3000);
         }
     },
 
     mounted() {
         console.log("test ok");
+        this.autoScroll();
     } 
 
 }).mount('#app');
